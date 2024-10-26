@@ -1,4 +1,4 @@
-# GPT2 in Jax
+# GPT-2 in Jax
 ---
 This repo accompanies the [Equinox and Friends]() blog post and the GPT-2 in Jax blog post (in progress). Here's a description of each file:
 

@@ -98,6 +98,7 @@ def main() -> None:
     X, y, key = generate_polynomial_data(
         key, coefficients=jnp.array([1, -2, 1, -2]), n_samples=1_000
     )
+    # standardize data
     X_norm = (X - X.mean()) / X.std()
     y_norm = (y - y.mean()) / y.std()
 
@@ -105,6 +106,7 @@ def main() -> None:
     rprint(f"y shape: {y.shape} - y dtype: {y.dtype}")
 
     model = Model(1, 128, key)
+    # pretty print model structure
     model_str = eqx.tree_pformat(model)
     rprint(model_str)
 
@@ -117,6 +119,12 @@ def main() -> None:
     model, losses = train(model, optim, X_norm, y_norm, num_epochs, log_rate)
     end_time = time.time()
     rprint(f"Total train time: {end_time-start_time:.2f} seconds")
+
+    plt.plot(losses)
+    plt.xlabel('Epoch')
+    plt.ylabel('Loss')
+    plt.title('Training Loss over Epochs')
+    plt.show()
 
     # Plot model's predictions
     out = jax.vmap(model)(X_norm)

@@ -1,8 +1,14 @@
 # GPT-2 in Jax
 ---
-This repo accompanies the [Equinox and Friends]() blog post and the GPT-2 in Jax blog post (in progress). Here's a description of each file:
+This repo accompanies the [Equinox and Friends](https://enerrio.bearblog.dev/equinox-and-friends/) blog post and the GPT-2 in Jax blog post (in progress). Here's a description of each file:
 
 * equinox_test.py: Code from `Equinox and Friends` blog post
+
+This code was tested using:
+* jax==0.4.34
+* jaxtyping==0.2.34
+* optax==0.2.3
+* equinox==0.11.7
 
 > [!IMPORTANT]  
 > Everything below is a work in progress for the `GPT-2 in Jax` blog post.

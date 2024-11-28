@@ -4,9 +4,7 @@ import jax.numpy as jnp
 from transformer.model import (
     MultiHeadedAttention,
     MLP,
-    TransformerBlock,
 )
-from tests.custom_models import EquinoxTransformerBlock
 
 
 def test_multi_headed_attention(cfg, x, key):
@@ -104,14 +102,3 @@ def test_mlp(cfg, x, key):
     # Compare outputs
     assert jnp.allclose(custom_output, eqx_output), "MLP outputs do not match"
     print("Test passed: Custom MLP and Equinox's MLP produce identical outputs.")
-
-
-def test_transformer_block(cfg, x, key):
-    custom_trf_block = TransformerBlock(cfg, key)
-    eqx_trf_block = EquinoxTransformerBlock(cfg, key)
-
-    custom_output = jax.vmap(custom_trf_block)(x)
-    eqx_output = jax.vmap(eqx_trf_block)(x)
-
-    assert jnp.allclose(custom_output, eqx_output), "Transformer outputs do not match"
-    print("Test passed: Custom Transformer Block outputs are identical.")

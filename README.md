@@ -1,8 +1,9 @@
 # GPT-2 in Jax
 ---
-This repo accompanies the [Equinox and Friends](https://enerrio.bearblog.dev/equinox-and-friends/) blog post and the [GPT-2 in Jax](https://enerrio.bearblog.dev/gpt2-in-jax/) blog post. Here's a description of each file:
+This repo accompanies the [Equinox and Friends](https://enerrio.bearblog.dev/equinox-and-friends/) blog post and the [GPT-2 in Jax](https://enerrio.bearblog.dev/gpt2-in-jax/) blog post and the [Beautiful Progress Bars with Rich](https://enerrio.bearblog.dev/beautiful-progress-bars-in-rich/). Here's a description of each file:
 
 * equinox_test.py: Code from `Equinox and Friends` blog post
+* rich_progress_demo.py: Code from `Beautiful Progress Bars with Rich` blog post
 * entry_point.py: Main entry script for running training and inference
 * config.py: Hyperparameters for different GPT-2 model sizes
 * run_train.py: Kicks off training of the model
